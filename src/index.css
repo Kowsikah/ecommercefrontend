@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --color-olive: #3c4726;
+  --color-olive-dark: #323c20;
+  --color-gold: #d9a557;
+  --color-gold-btn: #e0b565;
+  --color-cream: #faf8f3;
+  --color-ink: #23281b;
+  --color-night: #0a0a0a;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+button:not(:disabled),
+[role="button"] {
+  cursor: pointer;
+}
