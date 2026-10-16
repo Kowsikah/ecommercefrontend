@@ -14,6 +14,13 @@ import OrderConfirmation from './pages/OrderConfirmation.jsx';
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 import AdminRoute from './components/AdminRoute.jsx';
+import TrackOrder from './pages/TrackOrder.jsx';
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
+import RefundPolicy from './pages/RefundPolicy.jsx';
+import CancellationPolicy from './pages/CancellationPolicy.jsx';
+import WhatsAppButton from './components/WhatsAppButton.jsx';
+import ChatBot from './components/ChatBot.jsx';
+import GlobalFX from './components/GlobalFX.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
 export default function App() {
 
@@ -35,11 +42,18 @@ export default function App() {
              <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
   <Route path="/order/:id" element={<OrderConfirmation />} />
+          <Route path="/track-order" element={<TrackOrder />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/cancellation-policy" element={<CancellationPolicy />} />
          
           {/* About, Benefits, Contact, Cart, Checkout come in later steps */}
         </Routes>
       </main>
       <Footer />
+      <GlobalFX />
+      <WhatsAppButton />
+      <ChatBot />
     </div>
     </AuthProvider>
   );

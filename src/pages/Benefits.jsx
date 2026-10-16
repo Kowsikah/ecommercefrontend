@@ -120,7 +120,7 @@ export default function Benefits() {
               <article
                 key={title}
                 onClick={() => setActiveIndex(idx)}
-                className={`group cursor-pointer rounded-3xl border p-8 text-center transition-all duration-300 ${
+                className={`spotlight group cursor-pointer rounded-3xl border p-8 text-center transition-all duration-300 ${
                   activeIndex === idx
                     ? 'border-gold bg-white shadow-2xl shadow-olive/15 -translate-y-2'
                     : 'border-olive/15 bg-white/70 hover:-translate-y-1 hover:border-olive/40 hover:shadow-xl hover:shadow-olive/10'
@@ -148,7 +148,7 @@ export default function Benefits() {
           <div className="mt-16 text-center">
             <Link
               to="/shop"
-              className="inline-block rounded-xl bg-olive px-9 py-4 font-medium text-white shadow-xl shadow-olive/20 transition hover:-translate-y-0.5 hover:bg-olive-dark hover:scale-105"
+              className="btn-shine inline-block rounded-xl bg-olive px-9 py-4 font-medium text-white shadow-xl shadow-olive/20 transition hover:-translate-y-0.5 hover:bg-olive-dark hover:scale-105"
             >
               Shop Our Collection
             </Link>

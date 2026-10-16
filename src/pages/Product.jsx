@@ -100,9 +100,10 @@ useEffect(() => {
 
             <div className="mt-4 flex items-baseline gap-3">
               <span className="font-serif text-4xl font-semibold text-olive">
-                598              </span>
+                ₹{Number(product?.price ?? 598)}
+              </span>
               {product?.size_ml && (
-                <span className="text-sm text-ink/60">/ 200 ml</span>
+                <span className="text-sm text-ink/60">/ {product.size_ml} ml</span>
               )}
             </div>
             {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
@@ -123,7 +124,7 @@ useEffect(() => {
             {/* Feature chips */}
             <div className="mt-6 flex flex-wrap gap-2.5">
               {FEATURES.map((f) => (
-                <span key={f} className="rounded-full border border-olive/25 bg-white px-4 py-1.5 text-sm text-olive">
+                <span key={f} className="rounded-full border border-olive/25 bg-white px-4 py-1.5 text-sm text-olive transition hover:border-olive hover:bg-olive hover:text-white">
                   {f}
                 </span>
               ))}
@@ -155,7 +156,7 @@ useEffect(() => {
                 type="button"
                 onClick={handleAddToCart}
                 disabled={!product || outOfStock}
-                className="flex-1 min-w-[10rem] rounded-lg bg-olive px-8 py-3.5 font-medium text-white shadow-lg shadow-olive/20 transition hover:-translate-y-0.5 hover:bg-olive-dark disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0"
+                className="btn-shine flex-1 min-w-[10rem] rounded-lg bg-olive px-8 py-3.5 font-medium text-white shadow-lg shadow-olive/20 transition hover:-translate-y-0.5 hover:bg-olive-dark disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0"
               >
                 {outOfStock ? 'Out of stock' : 'Add to Cart'}
               </button>
@@ -178,14 +179,14 @@ useEffect(() => {
       {/* ───────── BENEFITS ───────── */}
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
-          <h2 className="font-serif font-semibold text-3xl md:text-4xl text-ink text-center">
+          <h2 className="reveal font-serif font-semibold text-3xl md:text-4xl text-ink text-center">
             Benefits you’ll love
           </h2>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {BENEFITS.map((b) => (
               <div
                 key={b}
-                className="flex items-start gap-4 rounded-2xl border border-olive/10 bg-cream p-5 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-olive/10"
+                className="reveal spotlight flex items-start gap-4 rounded-2xl border border-olive/10 bg-cream p-5 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-olive/10"
               >
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-olive text-white">
                   <CheckIcon />
@@ -205,7 +206,7 @@ useEffect(() => {
             {HOW_TO_USE.map((step, i) => (
               <li
                 key={step}
-                className="flex items-start gap-4 rounded-2xl border border-white/15 bg-white/5 p-5"
+                className="reveal flex items-start gap-4 rounded-2xl border border-white/15 bg-white/5 p-5"
               >
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold-btn font-semibold text-ink">
                   {i + 1}
@@ -236,7 +237,7 @@ useEffect(() => {
     <p className="mt-10 text-ink/70">Have questions about the oil?</p>
     <Link
       to="/contact"
-      className="mt-4 inline-block rounded-lg bg-gold-btn px-7 py-3.5 font-medium text-ink transition hover:brightness-105"
+      className="btn-shine mt-4 inline-block rounded-lg bg-gold-btn px-7 py-3.5 font-medium text-ink transition hover:brightness-105"
     >
       Ask us anything
     </Link>

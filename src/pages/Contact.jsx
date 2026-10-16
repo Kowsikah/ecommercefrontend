@@ -73,7 +73,7 @@ export default function Contact() {
                     href={href}
                     target={href.startsWith('http') ? '_blank' : undefined}
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 rounded-2xl border border-olive/15 bg-white p-4 transition hover:-translate-y-0.5 hover:border-olive/40 hover:shadow-lg hover:shadow-olive/10"
+                    className="spotlight reveal group flex items-center gap-4 rounded-2xl border border-olive/15 bg-white p-4 transition hover:-translate-y-0.5 hover:border-olive/40 hover:shadow-lg hover:shadow-olive/10"
                   >
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-olive text-white transition group-hover:bg-gold-btn group-hover:text-ink">
                       <Icon size={20} />
@@ -90,7 +90,7 @@ export default function Contact() {
 
           {/* Form */}
           <div className="lg:col-span-3">
-            <div className="rounded-3xl border border-olive/15 bg-white p-6 sm:p-8 shadow-xl shadow-olive/10">
+            <div className="reveal rounded-3xl border border-olive/15 bg-white p-6 sm:p-8 shadow-xl shadow-olive/10">
               <h2 className="font-serif text-2xl font-semibold text-ink">Send us a message</h2>
               <p className="mt-1 text-sm text-ink/60">We’ll get back to you as soon as we can.</p>
 
@@ -160,7 +160,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={status === 'sending'}
-                    className="inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-olive px-8 py-3.5 font-medium text-white shadow-lg shadow-olive/20 transition hover:-translate-y-0.5 hover:bg-olive-dark disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 sm:w-auto"
+                    className="btn-shine inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-olive px-8 py-3.5 font-medium text-white shadow-lg shadow-olive/20 transition hover:-translate-y-0.5 hover:bg-olive-dark disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 sm:w-auto"
                   >
                     {status === 'sending' ? 'Sending…' : 'Send Us a Message'}
                     {status !== 'sending' && <SendIcon size={18} />}

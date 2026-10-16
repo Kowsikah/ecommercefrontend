@@ -103,7 +103,7 @@ export default function About() {
             </div>
 
             {/* Active Milestone Card */}
-            <div className="rounded-3xl border border-olive/20 bg-white p-6 md:p-8 shadow-xl shadow-olive/10 transition-all duration-300">
+            <div className="spotlight rounded-3xl border border-olive/20 bg-white p-6 md:p-8 shadow-xl shadow-olive/10 transition-all duration-300">
               <span className="text-xs uppercase tracking-widest text-gold font-bold">
                 {STORY_HIGHLIGHTS[activeTab].tag} Milestone
               </span>
@@ -167,7 +167,7 @@ export default function About() {
             {WHY_POINTS.map((point) => (
               <li
                 key={point}
-                className="group flex items-start gap-4 rounded-3xl border border-olive/15 bg-cream/60 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:bg-white hover:shadow-xl hover:shadow-olive/15 hover:border-gold/50"
+                className="reveal spotlight group flex items-start gap-4 rounded-3xl border border-olive/15 bg-cream/60 p-6 transition-all duration-300 hover:-translate-y-1.5 hover:bg-white hover:shadow-xl hover:shadow-olive/15 hover:border-gold/50"
               >
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-olive text-white shadow-md transition group-hover:bg-gold group-hover:text-ink">
                   <CheckIcon size={20} />

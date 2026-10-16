@@ -8,7 +8,7 @@ export default function CartItemRow({ item, compact = false }) {
   return (
     <li className="flex gap-4 py-5">
       <img
-        src={item.image}
+        src="/product.jpeg"
         alt={item.name}
         className={`${compact ? 'h-20 w-20' : 'h-24 w-24 sm:h-28 sm:w-28'} shrink-0 rounded-xl border border-olive/15 object-cover object-[55%_35%]`}
       />

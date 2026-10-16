@@ -23,3 +23,41 @@ button:not(:disabled),
 [role="button"] {
   cursor: pointer;
 }
+/* ───────── Subtle motion & hover effects ───────── */
+html { scroll-behavior: smooth; }
+
+/* Scroll reveal: only active when GlobalFX adds .fx (never hides content without JS) */
+.fx .reveal:not(.in) { opacity: 0; }
+.fx .reveal.in { animation: fade-up .7s cubic-bezier(.2,.7,.2,1) backwards; }
+@keyframes fade-up { from { opacity: 0; transform: translateY(18px); } }
+
+/* Cursor-follow glow on cards (desktop only, purely decorative) */
+.spotlight { position: relative; isolation: isolate; }
+.spotlight::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+  pointer-events: none; opacity: 0; transition: opacity .35s;
+  background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgb(217 165 87 / .18), transparent 65%);
+}
+@media (hover: hover) { .spotlight:hover::before { opacity: 1; } }
+
+/* Soft light sweep on primary buttons */
+.btn-shine { position: relative; overflow: hidden; }
+.btn-shine::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, rgb(255 255 255 / .32) 50%, transparent 65%);
+  transform: translateX(-120%); transition: transform .8s ease;
+}
+@media (hover: hover) { .btn-shine:hover::after { transform: translateX(120%); } }
+
+/* Slow floating background glow */
+.float-slow { animation: float 10s ease-in-out infinite; }
+@keyframes float { 50% { transform: translate3d(0, -18px, 0) scale(1.05); } }
+
+/* Subtle gold underline that grows on hover */
+.link-grow { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .3s; }
+.link-grow:hover { background-size: 100% 1px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .float-slow { animation: none; }
+  .btn-shine::after { display: none; }
+}

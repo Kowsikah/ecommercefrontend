@@ -62,6 +62,13 @@ const exploreLinks = [
   ['/contact', 'Contact'],
 ];
 
+const quickLinks = [
+  ['/track-order', 'Track Order'],
+  ['/privacy-policy', 'Privacy Policy'],
+  ['/refund-policy', 'Refund Policy'],
+  ['/cancellation-policy', 'Cancellation Policy'],
+];
+
 const directContacts = [
   {
     label: 'WhatsApp',
@@ -103,12 +110,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-14">
           
           {/* Brand */}
-          <div className="md:col-span-5 text-center md:text-left">
+          <div className="md:col-span-4 text-center md:text-left">
             <Link to="/" aria-label="Be in Love — home">
               <img
                 src={logoFull}
                 alt="Be in love — make your hair healthier"
-                className="h-22 w-auto mx-auto md:mx-0 transition duration-300 hover:scale-[1.02]"
+                className="h-12 w-auto mx-auto md:mx-0 transition duration-300 hover:scale-[1.02]"
               />
             </Link>
             <p className="mt-4 max-w-sm font-serif italic text-lg leading-relaxed text-white/75 mx-auto md:mx-0">
@@ -134,8 +141,26 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Quick links */}
+          <div className="md:col-span-2 text-center md:text-left">
+            <Heading>Quick links</Heading>
+            <ul className="mt-5 space-y-3.5">
+              {quickLinks.map(([to, label]) => (
+                <li key={to}>
+                  <Link
+                    to={to}
+                    className="group inline-flex items-center gap-0 text-base transition-all duration-300 hover:gap-2 hover:text-white"
+                  >
+                    <span className="h-px w-0 bg-gold transition-all duration-300 group-hover:w-3" />
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Contact & Socials */}
-          <div className="md:col-span-5 text-center md:text-left">
+          <div className="md:col-span-4 text-center md:text-left">
             <Heading>Get in touch</Heading>
 
             {/* Direct Contact Cards */}
